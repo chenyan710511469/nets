@@ -39,6 +39,7 @@ UdpIoService::~UdpIoService()
 bool UdpIoService::recvfromCallback(UdpIoRequest * request, void * owner)
 {
     ((UdpIoService *)owner)->recvfromCallback(request);
+    return true;
 }
 
 bool UdpIoService::recvfromCallback(UdpIoRequest * request)

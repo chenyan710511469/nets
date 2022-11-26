@@ -61,6 +61,7 @@ bool ChatC::start()
     catch (std::exception & ex) {
         printf("%s\n", ex.what());
     }
+    return false;
 }
 
 int main(int argc, char * argv[])

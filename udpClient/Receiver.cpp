@@ -57,3 +57,6 @@ void Receiver::disconnected(protocols::SenderBase * sender)
 {
 }
 
+void Receiver::replyUpper(protocols::SenderBase * sender, bool result, void * upperPointer)
+{
+}

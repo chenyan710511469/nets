@@ -29,18 +29,19 @@ CFLAGS := -D_CARRIER_ -D__UNIX__ $(Bits) -DWITH_GZIP -std=gnu++11
 
 SRCS := $(wildcard $(SRC_DIR)/*.cpp)
 OBJS := $(patsubst %.cpp,%, $(SRCS))
+PWD := $(shell pwd)
 
 ## 依赖的库名称
 LIBS += pthread TCPClientService TCPService UDPClientService UDPService ProtocolService json_linux-gcc-7_libmt tinyxml2
 
 ## 包含的头文件
 INC_PATH += ./
-INC_PATH += /home/chenyan/projects/project1/include \
-            /home/chenyan/projects/project1/udpClient/include
+INC_PATH += $(PWD)/../include \
+            $(PWD)/include
 
 
 ## 库所在的目录
-LIB_PATH += /home/chenyan/projects/project1/lib64
+LIB_PATH += $(PWD)/../lib64
 
 ###根据系统导入公共库文件目录
 ifeq ($(Bits),-m64)

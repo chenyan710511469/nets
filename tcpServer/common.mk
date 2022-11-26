@@ -243,7 +243,7 @@ ifneq ($(strip $(ARC_TARGET)),)
 	$(foreach var, $(INSTALL_LIB_PATH), $(INSTALL) $(ARC_TARGET) $(var)/$(ARC_TARGET) ;)
 	$(foreach var, $(INSTALL_LIB_PATH), chmod +x $(var)/$(ARC_TARGET) ;)
 	#chmod +x $(INSTALL_LIB_PATH)/$(ARC_TARGET)
-	$(RM) $(ARC_TARGET)
+	$(RM) $(ARC_TARGET)/*.o
   $(ARC_TARGET) : $(OBJS)
 	$(AR) crus $(ARC_TARGET) $(OBJS)
 
@@ -251,7 +251,7 @@ ifneq ($(strip $(ARC_TARGET)),)
   
   uninstallarc:
 	$(foreach file, $(INSTALL_INC), $(RM) $(INSTALL_INC_PATH)/$(file) ;)
-	$(RM) $(INSTALL_LIB_PATH)/$(ARC_TARGET)
+	$(RM) $(INSTALL_LIB_PATH)/$(ARC_TARGET)/*.o
 
 
 endif
@@ -277,7 +277,7 @@ ifneq ($(strip $(SO_TARGET)),)
 
   uninstallso:
 	$(foreach file, $(INSTALL_INC), $(RM) $(INSTALL_INC_PATH)/$(file) ;)
-	$(RM) $(INSTALL_LIB_PATH)/$(ARC_TARGET)
+	$(RM) $(INSTALL_LIB_PATH)/$(ARC_TARGET)/*.o
 
 endif
 
@@ -328,8 +328,8 @@ install_inc:
 clean:
 	$(RM) $(ASMS)  $(OBJS)  *.pdb *.map
 	$(foreach var, $(INSTALL_APP_PATH), $(RM) $(var)/$(APP_TARGET))
-	$(foreach var, $(INSTALL_LIB_PATH), $(RM) $(var)/$(SO_TARGET))
-	$(foreach var, $(INSTALL_LIB_PATH), $(RM) $(var)/$(ARC_TARGET))
+	#$(foreach var, $(INSTALL_LIB_PATH), $(RM) $(var)/$(SO_TARGET)*.so)
+	#$(foreach var, $(INSTALL_LIB_PATH), $(RM) $(var)/$(ARC_TARGET)*.a)
 
 ## Rule to pre-install all headers
 

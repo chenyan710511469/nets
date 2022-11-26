@@ -268,6 +268,7 @@ ifneq ($(strip $(SO_TARGET)),)
 	$(INSTALL) $(SO_TARGET) $(INSTALL_LIB_PATH)/$(SO_TARGET)
 	chmod +x $(INSTALL_LIB_PATH)/$(SO_TARGET)
 	$(RM) $(SO_TARGET)
+	$(RM) $(SO_TARGET).map
   $(SO_TARGET) : $(OBJS)
 	$(LD) $(OBJS) -fPIC -shared -o $(SO_TARGET) $(LDFLAGS)
 	$(OBJDUMP) --syms $(SO_TARGET) | sort | grep " g" > $(SO_TARGET).map

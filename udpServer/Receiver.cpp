@@ -35,7 +35,7 @@ void Receiver::receive(tinyxml2::XMLDocument * xmlDocument, protocols::SenderBas
 void Receiver::receive(char * buffer, size_t bufferSize, protocols::SenderBase * sender)
 {
     printf("%ld:\n%s\n", bufferSize, buffer);
-    sender->send(buffer, bufferSize);
+    sender->send(buffer, bufferSize, NULL);
 }
 
 void Receiver::receive(Json::Value * rootValue, protocols::SenderBase * sender)

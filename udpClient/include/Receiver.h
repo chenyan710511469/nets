@@ -40,6 +40,7 @@ private:
     void destroySender(protocols::SenderBase * sender);
     void connected(protocols::SenderBase * sender);
     void disconnected(protocols::SenderBase * sender);
+    virtual void replyUpper(protocols::SenderBase * sender, bool result, void * upperPointer);
 
 private:
     ChatD               * mChatD;
