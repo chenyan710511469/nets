@@ -40,15 +40,15 @@ INC_PATH += $(PWD)/../include
 
 
 ## 库所在的目录
-LIB_PATH += $(PWD)/../lib64
+#LIB_PATH += $(PWD)/../lib64
 
 ###根据系统导入公共库文件目录
 ifeq ($(Bits),-m64)
-   LIB_PATH += $(PWD)/../../lib64
+   LIB_PATH += $(PWD)/../lib64
 else ifeq ($(Bits), -m32)
-   LIB_PATH += $(PWD)/../../lib32
+   LIB_PATH += $(PWD)/../lib32
 else
-	LIB_PATH += $(PWD)/../../libs
+	LIB_PATH += $(PWD)/../libs
 endif
 
 ###输出程序路径
