@@ -40,7 +40,7 @@ INC_PATH += $(PWD)/../include
 
 
 ## 库所在的目录
-#LIB_PATH += $(PWD)/../lib64
+LIB_PATH += $(PWD)/../lib64
 
 ###根据系统导入公共库文件目录
 ifeq ($(Bits),-m64)

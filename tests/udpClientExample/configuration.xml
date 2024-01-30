@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<udpclient>
+		<ip configGroupId="1" name="linux-2.19" remoteIpAddress="192.168.2.21" localIpAddress="192.168.2.19" IPv="IPv4">
+			<port>
+				<remotePort>30004</remotePort>
+				<localPort>40004</localPort>
+			</port>
+			<port>
+				<remotePort>30003</remotePort>
+				<localPort>40003</localPort>
+			</port>
+		</ip>
+		<ip configGroupId="1" name="linux-2.20" remoteIpAddress="192.168.2.21" localIpAddress="192.168.2.19" IPv="IPv4">
+			<port>
+				<remotePort>30002</remotePort>
+				<localPort>40002</localPort>
+			</port>
+		</ip>
+		<ip configGroupId="2" name="linux-2.21" remoteIpAddress="192.168.2.21" localIpAddress="192.168.2.19" IPv="IPv4">
+			<port>
+				<remotePort>30001</remotePort>
+				<localPort>40001</localPort>
+			</port>
+		</ip>
+	</udpclient>
+	<udpserver>
+		<ip configGroupId="3" name="linux-2.4" localIpAddress="192.168.2.19" IPv="4">
+			<port>
+				<localPort>30003</localPort>
+				<localPort>30004</localPort>
+			</port>
+		</ip>
+		<ip configGroupId="3" name="linux-2.5" localIpAddress="192.168.2.19" IPv="4">
+			<port>
+				<localPort>30001</localPort>
+				<localPort>30002</localPort>
+			</port>
+		</ip>
+	</udpserver>
+	<tcpclient>
+		<ip configGroupId="4" name="linux-2.5" remoteIpAddress="192.168.2.19" localIpAddress="192.168.2.19" IPv="IPv4">
+			<port>
+				<remotePort>10001</remotePort>
+				<localPort>20001</localPort>
+			</port>
+            <port>
+                <remotePort>10002</remotePort>
+                <localPort>20002</localPort>
+            </port>
+            <port>
+                <remotePort>10003</remotePort>
+                <localPort>20003</localPort>
+            </port>
+            <port>
+                <remotePort>10004</remotePort>
+                <localPort>20004</localPort>
+            </port>
+		</ip>
+	</tcpclient>
+	<tcpserver>
+		<ip configGroupId="5" name="linux-2.5" localIpAddress="192.168.2.19" IPv="IPv4">
+			<port>
+				<localPort>10003</localPort>
+				<localPort>10004</localPort>
+			</port>
+		</ip>
+		<ip configGroupId="5" name="linux-2.5" localIpAddress="192.168.2.19" IPv="4">
+			<port>
+				<localPort>10001</localPort>
+				<localPort>10002</localPort>
+			</port>
+		</ip>
+	</tcpserver>
+</configuration>
