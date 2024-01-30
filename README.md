@@ -8,10 +8,14 @@
 
 
 #### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```shell
+1.  git  clone  https://github.com/chenyan710511469/nets.git
+2.  cd  nets
+3.  mkdir build
+4.  cd build
+5.  cmake ..
+6.  make
+```
 
 #### 使用说明
 
